@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Testing pure COSMIC DE atomic build based on fedora-bootc image
+Testing
 
 ## Install
 ### rpm-ostree rebase
