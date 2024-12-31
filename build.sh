@@ -17,10 +17,10 @@ sh /tmp/scripts/script_template.sh
 ### Disabling System Unit File(s)
 
 ### Enabling System Unit File(s)
-# systemctl enable rpm-ostreed-automatic.timer
-# systemctl enable tuned.service
-# systemctl enable podman.socket
-# systemctl enable fstrim.timer
+systemctl enable bootc-fetch-apply-updates.timer
+systemctl enable tuned.service
+systemctl enable podman.socket
+systemctl enable fstrim.timer
 
 ### Clean Up
 shopt -s extglob
