@@ -1,6 +1,6 @@
 ### BASE-IMAGE ARGUMENTS
 # ARG SOURCE_IMAGE="fedora-bootc"
-ARG SOURCE_IMAGE="fedora-coreos"
+ARG SOURCE_IMAGE="fedora"
 ARG SOURCE_TAG="latest"
 
 ### FETCH BASE-IMAGE
