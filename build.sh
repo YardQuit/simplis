@@ -5,7 +5,8 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 ### SET DEFAULT HOSTNAME
-echo $(date +S"%y%m") | tee /etc/hostname
+echo $(date +S"%y%m") > /etc/hostname
+hostname
 
 ### COPY FILES
 cp -rv /tmp/sysfiles/* /
