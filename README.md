@@ -30,7 +30,7 @@ systemctl reboot
 ### bootc switch
 Rebase from bootc
 ```bash
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/yardquit/simplis:latest
+sudo bootc switch ghcr.io/yardquit/simplis:latest
 ```
 
 Restart your system for the changes take effect:
