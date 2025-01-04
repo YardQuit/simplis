@@ -13,4 +13,8 @@ COPY build.sh /tmp/build.sh
 
 ### RUN BUILD-SCRIPT AND MAKE COMMIT 
 RUN /tmp/build.sh && \
+    dnf clean all && \
     ostree container commit
+
+### PERFORM ANALYSIS CHECKS
+RUN bootc container lint
