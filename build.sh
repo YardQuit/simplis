@@ -10,8 +10,8 @@ cp -rv /tmp/sysfiles/* /
 ### INSTALL PACKAGES
 # dnf -y install \
 # $(cat /tmp/packages/<filename>)
-# dnf -y install \
-# $(cat /tmp/packages/desktop)
+dnf -y install \
+$(cat /tmp/packages/desktop)
 
 ### Run configuration scripts
 sh /tmp/scripts/script_template.sh
