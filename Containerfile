@@ -3,7 +3,8 @@ ARG SOURCE_IMAGE="fedora-bootc"
 ARG SOURCE_TAG="latest"
 
 ### FETCH BASE-IMAGE
-FROM quay.io/fedora/${SOURCE_IMAGE}:${SOURCE_TAG}
+# FROM quay.io/fedora/${SOURCE_IMAGE}:${SOURCE_TAG}
+FROM ghcr.io/ublue-os/silverblue-main:latest
 
 ### COPY CONFIGUREATION FILES AND SCRIPTS
 COPY sysfiles /tmp/sysfiles
