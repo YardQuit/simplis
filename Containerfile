@@ -1,5 +1,5 @@
 ### BASE-IMAGE ARGUMENTS
-ARG SOURCE_IMAGE="fedora-bootc"
+ARG SOURCE_IMAGE="fedora-silverblue"
 ARG SOURCE_TAG="latest"
 
 ### FETCH BASE-IMAGE

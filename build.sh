@@ -8,8 +8,11 @@ RELEASE="$(rpm -E %fedora)"
 cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
-dnf -y group install \
-$(cat /tmp/packages/desktop)
+# dnf -y group install \
+# $(cat /tmp/packages/desktop)
+dnf -y install \
+$(cat /tmp/packages/personal)
+
 
 ### Enabling System Unit File(s)
 systemctl enable bootc-fetch-apply-updates.timer
