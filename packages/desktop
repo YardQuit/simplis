@@ -1,12 +1,5 @@
-dracut-config-rescue
-dracut
-dracut-network
-dracut-squash
-plymouth
-plymouth-system-theme
-plymouth-core-libs
-plymouth-graphics-libs
-plymouth-plugin-label
-plymouth-plugin-two-step
-plymouth-scripts
-plymouth-theme-spinner
+base-graphical
+core
+fonts
+hardware-support
+workstations-product

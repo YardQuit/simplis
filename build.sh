@@ -8,7 +8,7 @@ RELEASE="$(rpm -E %fedora)"
 cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
-dnf -y install \
+dnf -y group install \
 $(cat /tmp/packages/desktop)
 
 ### Enabling System Unit File(s)
