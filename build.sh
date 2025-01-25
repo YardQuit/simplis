@@ -8,20 +8,15 @@ RELEASE="$(rpm -E %fedora)"
 cp -rv /tmp/sysfiles/* /
 
 ### INSTALL PACKAGES
-# dnf -y install \
-# $(cat /tmp/packages/<filename>)
 dnf -y install \
 $(cat /tmp/packages/desktop)
-
-### Run configuration scripts
-sh /tmp/scripts/script_template.sh
-
-### Disabling System Unit File(s)
 
 ### Enabling System Unit File(s)
 systemctl enable bootc-fetch-apply-updates.timer
 systemctl enable podman.socket
 systemctl enable fstrim.timer
+
+### Disabling System Unit File(s)
 
 ### Clean Up
 shopt -s extglob
