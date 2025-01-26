@@ -18,14 +18,6 @@ Restart your system for the changes take effect:
 ```bash
 systemctl reboot
 ```
-Rebase from unsigned to signed:
-```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/yardquit/simplis:latest
-```
-Restart your system for the changes take effect:
-```bash
-systemctl reboot
-```
 
 ### bootc switch
 Rebase from bootc
