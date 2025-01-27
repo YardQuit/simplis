@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Testing
+My personal daily-drive with Cosmic Desktop and yubikey challange for sudo access
 
 ## Install
 ### rpm-ostree rebase
@@ -28,4 +28,15 @@ sudo bootc switch ghcr.io/yardquit/simplis:latest
 Restart your system for the changes take effect:
 ```bash
 systemctl reboot
+```
+
+### YubiKey
+Instructions to complete the yubikey registration process.
+```bash
+# Insert your YubiKey into a compatible USB port on your computer.
+ykpamcfg -2
+```
+Ensure that YubiKey support is enabled and functional in your system settings.
+```bash
+sudo echo "Testing sudo with YubiKey"
 ```
