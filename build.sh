@@ -23,7 +23,6 @@ dnf5 -y install starship
 systemctl disable cosmic-greeter.service
 
 ### ENABLING SYSTEM UNIT FILE(S)
-systemctl enable bootc-fetch-apply-updates.timer
 systemctl enable tuned.service
 systemctl enable podman.socket
 systemctl enable fstrim.timer
