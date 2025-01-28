@@ -20,7 +20,7 @@ dnf5 -y install ghostty
 dnf5 -y install starship
 
 ### FIXING ABRTD SERVICE FROM FAILING TO START
-groupadd abrt
+# groupadd abrt
 
 ### DISABLING SYSTEM UNIT FILE(S)
 systemctl disable cosmic-greeter.service
