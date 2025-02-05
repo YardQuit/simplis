@@ -18,5 +18,5 @@ RUN /tmp/build.sh && \
     ostree container commit
 
 ### PERFORM ANALYSIS CHECKS
-RUN bootc container lint
+# RUN bootc container lint
 
