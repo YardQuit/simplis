@@ -19,6 +19,11 @@ $(cat /tmp/packages/personal)
 dnf5 -y install ghostty
 dnf5 -y install starship
 
+### INSTALLS RPMs
+wget https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
+mv 1password-latest.rpm /tmp/
+dnf5 -y install /tmp/1password-latest.rpm
+
 ### FIXING ABRTD SERVICE FROM FAILING TO START
 # groupadd abrt
 
@@ -51,3 +56,4 @@ rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:a-zhn:ghostty.repo
 rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
+rm -rf 
