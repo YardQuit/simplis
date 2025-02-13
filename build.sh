@@ -19,6 +19,14 @@ $(cat /tmp/packages/personal)
 dnf5 -y install ghostty
 dnf5 -y install starship
 
+### INSTALL RPM(S)
+mkdir /var/lib/appopt
+rmdir /opt
+ln -sr /var/lib/appopt /opt
+wget https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
+mv 1password-latest.rpm /tmp/
+dnf5 -y install /tmp/1password-latest.rpm
+
 ### FIXING ABRTD SERVICE FROM FAILING TO START
 # groupadd abrt
 
