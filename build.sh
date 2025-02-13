@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
+echo Installing Fedora:"$RELEASE"
 
 ### COPY FILES
 cp -rv /tmp/sysfiles/* /
@@ -23,9 +24,7 @@ dnf5 -y install starship
 mkdir /var/lib/appopt
 rm /opt
 ln -sr /var/lib/appopt /opt
-wget https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
-mv 1password-latest.rpm /tmp/
-dnf5 -y install /tmp/1password-latest.rpm
+dnf5 -y install https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
 
 ### FIXING ABRTD SERVICE FROM FAILING TO START
 # groupadd abrt
@@ -52,6 +51,7 @@ sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response
 # sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
 
 ### CLEAN UP
+dnf5 -y clean all
 shopt -s extglob
 rm -rf /tmp/* || true
 rm -rf /var/!(cache)
