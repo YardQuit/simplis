@@ -9,23 +9,14 @@ cp -rv /tmp/sysfiles/* /
 
 ### INSTALLS PACKAGE(S) FROM FEDORA REPOS
 dnf5 -y install \
-$(cat /tmp/packages/desktop_env) \
-$(cat /tmp/packages/security) \
+$(cat /tmp/packages/desktop) \
 $(cat /tmp/packages/fonts) \
-$(cat /tmp/packages/personal) 
+$(cat /tmp/packages/generic) \
+$(cat /tmp/packages/security)
 
 ### INSTALLS PACKAGE(S) FROM COPR REPOS
 dnf5 -y install ghostty
 dnf5 -y install starship
-
-### INSTALL RPM(S)
-# mkdir /var/lib/appopt
-# rm /opt
-# ln -sr /var/lib/appopt /opt
-# dnf5 -y install https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
-
-### FIXING ABRTD SERVICE FROM FAILING TO START
-# groupadd abrt
 
 ### DISABLING SYSTEM UNIT FILE(S)
 systemctl disable cosmic-greeter.service
@@ -44,9 +35,6 @@ sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firew
 ### YUBICO CHALLANGE FOR SUDO
 cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
 sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response' /etc/pam.d/sudo
-
-### ERROR WITH BOOTC PREVENTING SYSTEMD-REMOUNT-FS.SERVICE TO START - APPLY POST INSTALL
-# sed -i 's/subvol\[=.*\]/#&/g' /etc/fstab
 
 ### CLEAN UP
 dnf5 -y clean all
