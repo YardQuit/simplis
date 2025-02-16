@@ -9,7 +9,6 @@ cp -rv /tmp/sysfiles/* /
 
 ### INSTALLS PACKAGE(S) FROM FEDORA REPOS
 dnf5 -y install \
-$(cat /tmp/packages/desktop_std) \
 $(cat /tmp/packages/desktop_env) \
 $(cat /tmp/packages/security) \
 $(cat /tmp/packages/fonts) \
