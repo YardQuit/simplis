@@ -13,10 +13,8 @@ stow
 stow-doc
 tldr
 translate-shell
-wget
 tailscale
 chromium
-fedora-chromium-config
 arp-scan
 mozilla-openh264
 gstreamer1-plugin-gtk4
