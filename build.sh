@@ -36,6 +36,9 @@ sed -i 's/DefaultZone=FedoraWorkstation/DefaultZone=drop/g' /etc/firewalld/firew
 cp /etc/pam.d/sudo /etc/pam.d/sudo.bak
 sed -i '/PAM-1.0/a\auth       required     pam_yubico.so mode=challenge-response' /etc/pam.d/sudo
 
+### CREATE MISSING DIRS
+mkdir /var/spool/anacron
+
 ### CLEAN UP
 dnf5 -y clean all
 shopt -s extglob
