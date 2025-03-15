@@ -6,6 +6,7 @@ RELEASE="$(rpm -E %fedora)"
 
 ### COPY FILES
 cp -rv /tmp/sysfiles/* /
+chmod +x /etc/cron.daily/*
 
 ### INSTALLS PACKAGE(S) FROM FEDORA REPOS
 dnf5 -y install \
