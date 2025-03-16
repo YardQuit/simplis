@@ -1,4 +1,5 @@
 [![Build_Image](https://github.com/YardQuit/simplis/actions/workflows/build.yml/badge.svg)](https://github.com/YardQuit/simplis/actions/workflows/build.yml)
+[![Build ISOs](https://github.com/YardQuit/simplis/actions/workflows/build-iso.yml/badge.svg)](https://github.com/YardQuit/simplis/actions/workflows/build-iso.yml)
 [![Clean_Images](https://github.com/YardQuit/simplis/actions/workflows/cleanup.yml/badge.svg)](https://github.com/YardQuit/simplis/actions/workflows/cleanup.yml)
 [![Dependabot Updates](https://github.com/YardQuit/simplis/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/YardQuit/simplis/actions/workflows/dependabot/dependabot-updates)
 
