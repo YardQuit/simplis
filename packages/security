@@ -3,3 +3,4 @@ pam_yubico
 pass
 ykocli
 yubico-piv-tool
+wireguard-tools
