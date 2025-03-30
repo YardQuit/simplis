@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # simplis
 simplis
 =======
@@ -45,4 +44,3 @@ Ensure that YubiKey support is enabled and functional in your system settings.
 ```bash
 sudo echo "Testing sudo with YubiKey"
 ```
->>>>>>> 51df65d (Initial commit)
