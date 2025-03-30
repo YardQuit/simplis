@@ -1,0 +1,130 @@
+################################################################################
+# PATH
+################################################################################
+PATH="$HOME/.local/bin${PATH:+:${PATH}}"
+export PATH="$PATH:$HOME/Appimage"
+export PATH="$PATH:$HOME/.local/share/applications"
+export PATH="$PATH:$HOME/./node_modules/.bin"
+export PATH="$PATH:/usr/local/include"
+export PATH="$PATH:/usr/local/lib"
+
+################################################################################
+# PATH MAY NEED UPDATE - LTEX-LS
+################################################################################
+<<<<<<< HEAD
+export PATH="$PATH:$HOME/.ltex-ls/ltex-ls-16.0.0/bin"
+=======
+export PATH="$PATH:$HOME/.ltex-ls/ltex-ls-16.0.0/bin
+>>>>>>> 9ca4791 (Rebased)
+
+################################################################################
+# SYSTEM VARIBLES
+################################################################################
+export WHISPERING_OAKS="hx"
+export LIBVIRT_DEFAULT_URI='qemu:///system'
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+# export FZF_DEFAULT_COMMAND="fd --type f"
+export DOCKER_HOST='unix:///run/user/1000/podman/podman-machine-default-api.sock'
+# export TERM="alacritty"
+# export TERM="xterm-256color" // default in Fedora
+
+################################################################################
+# XDG COMPLIANCE
+################################################################################
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+################################################################################
+# HISTORY
+################################################################################
+export HISTSIZE=200
+export HISTCONTROL="ignorespace:ignoredups:erasedups"
+shopt -s histappend
+shopt -s cmdhist
+
+################################################################################
+# DEFAULT EDITOR AND MAN-VIEWER
+################################################################################
+export IDE=hx
+export VISUAL=hx
+export EDITOR=hx
+[ -z "$EDITOR" ] && EDITOR=hx && VISUAL=hx && MANPAGER="nvim -c 'set ft=man' -"
+
+################################################################################
+# DEFAULT MEDIA PLAYERS
+################################################################################
+export PPIC=feh
+export PVID=mpv
+
+################################################################################
+# DEFAULT PDF VIEWER
+################################################################################
+export PPDF=mupdf
+
+################################################################################
+# TTY
+################################################################################
+export GPG_TTY=$(tty)
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+################################################################################
+# SQL DEFAULTS
+################################################################################
+export SQLITE_DEFAULT_MODE=table
+export SQLITE_DEFAULT_HEADERS=on
+
+################################################################################
+# PYTHON DEBUGGER
+################################################################################
+export PYTHONBREAKPOINT="pudb.set_trace"
+
+################################################################################
+# LS_COLORS (echo LS_COLORS)
+################################################################################
+export LS_COLORS="$LS_COLORS:*.tmp=01;31:*\~=01;31:"
+
+################################################################################
+# SECURITY
+################################################################################
+umask 022 # default, sets -rw-r--r--. 
+# umask 077 # custom, sets -rw------.
+
+################################################################################
+# LS COLORS
+################################################################################
+# dircolors --print-database
+
+# MODIFIERS
+# 0  = normal
+# 1  = bold
+# 4  = underlined
+# 5  = flashing text (disabled on some terminals)
+# 7  = reverse field (exchange foreground and background)
+# 8  = concealed (invisible)
+
+# ITEMS
+# cd = character device
+# do = door
+# mh = multi-hardlink
+# no = normal non-filename text
+# ow = other-writable directory
+# rs = reset to no color
+# sg = set-group-ID
+# st = sticky directory
+# sr = set-user-ID
+# tw = sticky and other-writable directory
+# di = dir
+# ca = file with capability
+# ex = executable
+# ln = symbolic link
+# so = socket
+# fi = file
+# bd = block device
+# or = orphan symbolic link
+# mi = missing file
+# pi = named pipe (FIFO)
+# *.extention
+
+LS_COLORS="\
+or=0;31:\
+*.tmp=0;33:\
+*~=0;33"

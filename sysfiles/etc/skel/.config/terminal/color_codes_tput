@@ -1,0 +1,10 @@
+# Tput Color Codes
+orange=$(tput setaf 166);
+ral6003=$(tput setaf 101);
+red=$(tput setaf 9);
+yellow=$(tput setaf 228);
+dyellow=$(tput setaf 003);
+green=$(tput setaf 10);
+white=$(tput setaf 15);
+bold=$(tput bold);
+reset=$(tput sgr0);

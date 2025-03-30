@@ -1,0 +1,167 @@
+###############################################################################
+# ALIAS HOST ONLY
+###############################################################################
+if [ ! -f "/run/.toolboxenv" ]; then
+
+  alias ou='sudo bootc upgrade'
+  alias os='rpm-ostree status -v'
+  alias oi='rpm-ostree install'
+  alias of='rpm-ostree search'
+  alias ot='systemctl status rpm-ostreed-automatic.timer || systemctl status bootc-fetch-apply-updates.timer'
+  alias inxishare='inxi -b --no-host --filter'
+  alias tbxu='sh ~/.config/terminal/scripts/toolbox_upgrade.sh'
+  alias e='toolbox enter'
+
+  alias yt-dlp='toolbox run yt-dlp $1'
+  alias mpv='toolbox run mpv $1'
+  alias rpi-imager='toolbox run rpi-imager'
+
+  alias 1password='toolbox run sh ~/.config/terminal/scripts/toolbox_1password.sh'
+  alias btop='toolbox run sh ~/.config/terminal/scripts/toolbox_btop.sh'
+  alias sensors='toolbox run sh ~/.config/terminal/scripts/toolbox_sensors.sh'
+  alias virt-manager='toolbox run sh ~/.config/terminal/scripts/toolbox_virt-manager.sh'
+
+  # alias lf='toolbox run sh ~/.config/terminal/scripts/toolbox_lf.sh'
+  # alias chromium='toolbox run sh ~/.config/terminal/scripts/toolbox_chromium.sh'
+  # alias obs='toolbox run sh ~/.config/terminal/scripts/toolbox_obs.sh'
+  # alias 1password='firefox --safe-mode --new-window https://my.1password.com/app'
+  # alias gimp='toolbox run sh ~/.config/terminal/scripts/toolbox_gimp.sh'
+
+###############################################################################
+# ALIAS TOOLBOX ONLY
+###############################################################################
+elif [ -f "/run/.toolboxenv" ]; then
+
+  alias mypy='mypy --check-untyped-defs'
+  alias pyenvcreate='python -m venv venv' # use deactivte to exit
+  alias pyenvactive='source venv/bin/activate'
+  alias pyenvstatus='[ -z "$VIRTUAL_ENV" ] && echo "not activated, run pyenvactive or pyenvcreate" || echo "$VIRTUAL_ENV"'
+  alias mpvfast="mpv --profile=low-latency"
+  alias mpvplay='mpv --title=mpvplay --cache-secs=180'
+
+fi
+
+###############################################################################
+# ALIAS HOST AND TOOLBOX
+###############################################################################
+
+  alias gp='cd ~/Workbench/personal/programming/'
+  alias gd='cd ~/Workbench/personal/documents/'
+  alias gb='cd ~/Workbench/personal/bootstrap/'
+  alias gs='cd ~/Workbench/personal/stow_dotfiles/'
+  alias ge='cd ~/Workbench/personal/education/'
+  alias gf='cd ~/Workbench/fedoraproject/fedora_atomic/'
+  alias gc='cd ~/.config'
+  alias gD='cd ~/Downloads/'
+
+  alias pcsv="column -t -L -s','"
+  alias py='python3'
+  alias gdiff="git diff"
+  alias diff="diff --color"
+  alias sqlite="sqlite3"
+  alias fastfetchshare="sh ~/.config/terminal/scripts/sys_fastfetch.sh"
+  alias scriptrecord='ts; script --timing="$TS"_timing "$TS"_script'
+  alias fpaste='fpaste --printonly'
+  alias stow='stow -t $HOME -d $HOME/Workbench/personal/stow_dotfiles'
+  alias ls='ls -hipX --group-directories-first --color=auto'
+  alias l='ls'
+  alias lt='ls -t'
+  alias la='ls -A'
+  alias lat='ls -At'
+  alias l.='ls -d .*'
+  alias l.t='l. -t .*'
+  alias ll.='l. -l'
+  alias ll.t='l. -lt'
+  alias ll='ls -l'
+  alias llt='ls -lt'
+  alias lla='ls -lA'
+  alias llat='ls -lAt'
+  alias lll="ls -l | awk '{print \$10}' | grep -E '\b[a-z]\w*\b' --color=never"
+  alias llL="ls -l | awk '{print \$10}' | grep -E '\b[A-Z]\w*\b' --color=never"
+  alias t2="tree -L 2 -C"
+  alias t2p="t2 --prune"
+  alias t2a="t2 -a"
+  alias t2du="t2 --du -h"
+  alias t3="tree -L 3 -C"
+  alias t3p="t3 --prune"
+  alias t3a="t3 -a"
+  alias t3du="t3 --du -h"
+  alias lldu="ls -l | awk '{ print \$10 }' | sed 's/\///' | xargs du -sh"
+  alias ..="cd ../"
+  alias ...="cd ../../"
+  alias ....="cd ../../../"
+  alias rm='rm -i'
+  alias mv='mv -vi'
+  alias cp='cp -vi'
+  alias cpr='rsync -avh --info=progress2'
+  alias grep='grep --color=always'
+  alias egrep='egrep --color=always'
+  alias wtrh='curl wttr.in/satrabrunn'
+  alias wtrw='curl wttr.in/stockholm'
+  alias wtre='curl wttr.in/enkoping'
+  alias wtrv='curl wttr.in/vasteras'
+  alias cal='cal --iso -mw'
+  alias lsblkc='lsblk -o name,uuid,state,fssize,size,fstype,mountpoint,model,partlabel'
+  alias lsblkcl='lsblk -o name,uuid,size,fstype,mountpoints,model,partlabel'
+  alias lsblkpt='lsblk -o name,uuid,size,fstype,fsver,label,mountpoint,ptuuid'
+  alias lsblksn='lsblk -d -o NAME,MODEL,SIZE,SERIAL'
+  alias big='du -ah 2> /dev/null | sort -hr | head -n 10'
+  alias wget='wget -c'
+  alias locate='plocate -e'
+  alias cls='clear -x'
+  alias xls='clear; source ~/.bashrc'
+  alias open='xdg-open'
+  alias gitlist='sh ~/.config/terminal/scripts/app_gitaheads.sh | sed "s/\^ /  /"'
+  alias gitmods='sh ~/.config/terminal/scripts/app_gitmods.sh | grep "\*"'
+  alias gitaheads='sh ~/.config/terminal/scripts/app_gitaheads.sh | grep "\^"'
+  alias date_new_zealand='TZ=Pacific/Auckland date'
+  alias date_new_york='TZ=America/New_York date'
+  alias date_los_angeles=TZ='America/Los_Angeles date'
+  alias date_london='TZ=Europe/London date'
+  alias date_utc='TZ=Etc/UTC date'
+  alias pubip='curl ifconfig.co ; curl ifconfig.co/country ; curl ifconfig.co/city'
+  alias connect='sh ~/.config/terminal/scripts/net_pinas.sh'
+  alias httpserver='sh ~/.config/terminal/scripts/net_http.sh'
+  alias aes='trans -no-auto  -show-languages no -show-dictionary no -show-alternatives no  -show-prompt-message no en:sv'
+  alias ase='trans -no-auto  -show-languages no -show-dictionary no -show-alternatives no  -show-prompt-message no sv:en'
+
+  ################################################################################
+  # FUNCTIONS
+  ################################################################################
+  # sudo !!
+  s() {
+      if [[ $? != 0 ]]; then
+          sudo $(history -p '!!')
+      fi
+  }
+
+  # delete by inode
+  irm() {
+      path=$(find . -maxdepth 1 -inum "$1")
+      read -r -p "Delete $path (y/n) " confirm
+      echo
+      if [[ $confirm == 'y' ]]; then
+          find . -maxdepth 1 -inum "$1" -delete
+      fi
+  }
+
+  # re-stow all dotfiles
+  stowall() {
+      for i in $(ls -l $HOME/Workbench/personal/stow_dotfiles/ | awk '{print $10}' | awk -F'/' '{print $1}'); do 
+          stow -vR --adopt $i
+      done 
+  }
+
+# timestamp
+  ts() {
+    export TS=$(date +"%y%m%d%H%M%S")
+    echo $TS
+  }
+
+# toolbox run !!
+  t() {
+      if [[ $? != 0 ]]; then
+          toolbox run $(history -p '!!')
+      fi
+  }
+

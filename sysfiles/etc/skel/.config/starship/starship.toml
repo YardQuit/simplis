@@ -1,0 +1,228 @@
+# starship confiuguration
+
+# format = '$all'
+format = '''
+[┌───────────────────┨](green bold) $sudo
+[│](green bold) $directory$hg_branch$git_branch$git_metrics$git_status$git_commit$git_state
+[└─┨](green bold) $username$time$character'''
+
+# timeout for commands executed by starship (delfault is 500 ms)
+command_timeout = 600
+
+# inserts blank line between shell prompts
+add_newline = true
+
+[username]
+style_user = 'white'
+style_root = 'yellow'
+format = '[$user]($style) '
+disabled = true
+show_always = true
+
+[hostname]
+disabled = false
+ssh_only = false
+ssh_symbol = 'ssh '
+trim_at = '.'
+format = '[$ssh_symbol](bold blue) on [$hostname](white) '
+
+[sudo]
+symbol = "sudo "
+format = '[$symbol](red bold)privileges'
+allow_windows = true
+disabled = false
+
+[time]
+disabled = true
+format = "[$time ](yellow)"
+time_format = "%H:%M"
+
+[directory]
+read_only = " [read-only] "
+truncation_length = 3
+truncation_symbol = '…/'
+home_symbol = "~"
+format = '[$path]($style)[$read_only](red bold) '
+
+[cmd_duration]
+disabled = true
+min_time = 2_000
+min_time_to_notify = 45_000
+show_milliseconds = true
+format = 'underwent [$duration](bold yellow)'
+
+[character] 
+success_symbol = '[❯](green bold)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❮](green bold)'
+vimcmd_replace_one_symbol = '[❮](bold purple)'
+vimcmd_replace_symbol = '[❮](bold purple)'
+vimcmd_visual_symbol = '[❮](bold yellow)'
+
+[git_status]
+format = '([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind$diverged$stashed\] ]($white bold))'
+conflicted = '[!$count ](red)'
+deleted = '[-$count ](red)'
+renamed = '[=$count ](yellow)'
+modified = '[/$count ](yellow)'
+staged = '[+$count ](green)'
+untracked = '[?$count ](white)'
+ahead = '[>$count ](purple)'
+behind = '[<$count ](purple)' 
+diverged = '[v$count ](white)'
+stashed = '[#$count ](blue)'
+up_to_date = '[✓](green bold)'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)](white) '
+cherry_pick = '[# PICKING](bold yellow)'
+
+[git_commit]
+disabled = false
+tag_symbol = "tag "
+tag_disabled = false
+tag_max_candidates = 0
+commit_hash_length = 4
+format = '[\($hash$tag\)](white) '
+
+[hg_branch]
+symbol = "\uf126 "
+style = "bold yellow"
+
+[git_branch]
+format = "on [$symbol$branch(:$remote_name-$remote_branch)]($style) "
+symbol = "\uf126 "
+style = "bold blue"
+always_show_remote = true
+
+[fossil_branch]
+symbol = "\uf126 "
+style = "bold yellow"
+
+[package]
+# disabled = true
+symbol = "pkg "
+
+[aws]
+symbol = "aws "
+
+[buf]
+symbol = "buf "
+
+[c]
+symbol = "clang "
+
+[conda]
+symbol = "conda "
+
+[dart]
+symbol = "dart "
+
+[docker_context]
+symbol = "docker "
+
+[elixir]
+symbol = "elixir "
+
+[elm]
+symbol = "elm "
+
+[golang]
+symbol = "golang "
+
+[guix_shell]
+symbol = "guix-shell "
+
+[haskell]
+symbol = "haskell "
+
+[haxe]
+symbol = "haxe "
+
+[java]
+symbol = "java "
+
+[julia]
+symbol = "julia "
+
+[lua]
+symbol = "lua "
+
+[memory_usage]
+symbol = "mem-usage "
+
+[meson]
+symbol = "meson "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix-shell "
+
+[nodejs]
+symbol = "nodejs "
+
+[pijul_channel]
+symbol = "pijul "
+
+[python]
+symbol = "python "
+
+[rlang]
+symbol = "rlang "
+
+[ruby]
+symbol = "ruby "
+
+[rust]
+symbol = "rust "
+
+[scala]
+symbol = "scala "
+
+[spack]
+symbol = "spack "
+
+[os]
+disabled = false
+style = "thin white"
+
+[os.symbols]
+CentOS = "\uf789 "
+Debian = "\ue60b "
+Fedora = "\uf798 "
+FreeBSD = "\uf3a4 "
+NixOS = "\uf2dc "
+openSUSE = "\ue62b "
+Redhat = "\uf7bc "
+RedHatEnterprise = "\uf7bc "
+SUSE = "\uf7d6 "
+Ubuntu = "\uf7df "
+Windows = "\uf3ca "
+Unknown = " "
+Arch = "A "
+# Alpine = " "
+# Amazon = " "
+# Android = " "
+# DragonFly = " "
+# Emscripten = " "
+# EndeavourOS = " "
+# Garuda = "﯑ "
+# Gentoo = " "
+# HardenedBSD = "ﲊ "
+# Illumos = " "
+# Linux = " "
+# Macos = " "
+# Manjaro = " "
+# Mariner = " "
+# MidnightBSD = " "
+# Mint = " "
+# NetBSD = " "
+# OpenBSD = " "
+# OracleLinux = " "
+# Pop = " "
+# Raspbian = " "
+# Redox = " "
+# Solus = "ﴱ "
+

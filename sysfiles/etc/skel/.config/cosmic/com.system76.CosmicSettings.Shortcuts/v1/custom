@@ -1,0 +1,33 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Spawn("ghostty"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "e",
+        description: Some("toolbox"),
+    ): Spawn("ghostty -e toolbox enter"),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "s",
+    ): ToggleSticky,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): System(Screenshot),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+}
