@@ -1,25 +1,31 @@
 #!/bin/bash
 
 # Commands to run automatically
-# sudo cp ~/.config/system/us /usr/share/X11/xkb/symbols/
 # setxkbmap -layout us -variant intl_nodeadkeys
 # xinput set-button-map 'Kensington Expert Mouse' 1 2 3 4 5 6 7 3
-# zellij delete-all-sessions
-
 
 # Default home directories
-mkdir -p ~/{Appimage,Security,Workbench}
-mkdir -p ~/.gnupg
-mkdir -p ~/.ssh/keys
-mkdir -p ~/.local/share/fonts
+mkdir -p "$HOME"/{Appimage,Mounts,Security,Workbench}
+mkdir -p "$HOME"/.gnupg
+mkdir -p "$HOME"/.ssh/keys
+mkdir -p "$HOME"/.yubico
+mkdir -p "$HOME"/.local/share/fonts
+
+# Set persmissions
+find "$HOME"/.ssh -type f -exec chmod 600 {} \;
+find "$HOME"/.ssh -type d -exec chmod 700 {} \;
+find "$HOME"/.gnupg -type f -exec chmod 600 {} \;
+find "$HOME"/.gnupg -type d -exec chmod 700 {} \;
+find "$HOME"/.yubico -type f -exec chmod 600 {} \;
+find "$HOME"/.yubico -type d -exec chmod 700 {} \;
 
 # GNOME Settings
 gsettings set org.gnome.desktop.peripherals.touchpad tap-and-drag-lock true
 
 # Volatile space
 mkdir -p /tmp/Volatile
-  if [ ! -f "~/Volatile" ]; then
-      ln -s /tmp/Volatile ~/ 2>/dev/null
+  if [ ! -f "$HOME/Volatile" ]; then
+      ln -s /tmp/Volatile "$HOME" 2>/dev/null
   fi
 
 # Host or Toolbox autoruns
@@ -31,12 +37,17 @@ mkdir -p /tmp/Volatile
     echo
     # Install local AI environment
     if ! [[ $(podman start ollama 2>/dev/null) ]]; then
-        podman run -d -v ollama:/root/.ollama -p 11434:11434 --restart always --name ollama docker.io/ollama/ollama:latest
-        podman exec -it ollama ollama pull llama3.2
+        read -p "Do you want to procees with local AI install? (y/N): " response
+        if [ "$response" = "y" ] || [ "$response" = Y ]; then
+            podman run -d -v ollama:/root/.ollama -p 11434:11434 --restart always --name ollama docker.io/ollama/ollama:latest
+            podman exec -it ollama ollama pull llama3.2
+        fi
     fi
 
     if ! [[ $(podman start open-webui 2>/dev/null) ]]; then
-        podman run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --restart always --name open-webui ghcr.io/open-webui/open-webui:latest
+        if [ "$response" = "y" ] || [ "$response" = Y ]; then
+            podman run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --restart always --name open-webui ghcr.io/open-webui/open-webui:latest
+        fi
     fi
   fi
 
