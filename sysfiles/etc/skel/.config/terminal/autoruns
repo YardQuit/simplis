@@ -4,12 +4,27 @@
 # setxkbmap -layout us -variant intl_nodeadkeys
 # xinput set-button-map 'Kensington Expert Mouse' 1 2 3 4 5 6 7 3
 
+# Remove home directories
+if [ -d Music ]; then
+    rmdir Music
+fi
+
+if [ -d Public ]; then
+    rmdir Public
+fi
+
+if [ ! -L Downloads ]; then
+    rmdir Downloads &&
+    ln -s /mnt/stash_files/stash_downloads "$HOME"/Downloads
+fi
+
 # Default home directories
 mkdir -p "$HOME"/{Appimage,Security,Workbench}
 mkdir -p "$HOME"/.gnupg
 mkdir -p "$HOME"/.ssh/keys
 mkdir -p "$HOME"/.yubico
 mkdir -p "$HOME"/.local/share/fonts
+
 
 # Set persmissions
 find "$HOME"/.ssh -type f -exec chmod 600 {} \;
@@ -26,7 +41,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad tap-and-drag-lock true
   if [ ! -L "$HOME/Mounts" ]; then
       ln -s /mnt "$HOME"/Mounts 2>/dev/null
   fi
-# 
+#
 # Volatile space
 mkdir -p /tmp/Volatile
   if [ ! -f "$HOME/Volatile" ]; then
