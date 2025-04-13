@@ -4,7 +4,8 @@
 PATH="$HOME/.local/bin${PATH:+:${PATH}}"
 export PATH="$PATH:$HOME/Appimage"
 export PATH="$PATH:$HOME/.local/share/applications"
-export PATH="$PATH:$HOME/./node_modules/.bin"
+export PATH="$PATH:$HOME/.node_modules/.bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/usr/local/include"
 export PATH="$PATH:/usr/local/lib"
 
