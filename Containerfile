@@ -1,7 +1,7 @@
 ### BASE-IMAGE ARGUMENTS
 # ARG SOURCE_REPO="ghcr.io/ublue-os"
-ARG SOURCE_REPO="quay.io/fedora"
-ARG SOURCE_IMAGE="fedora-silverblue"
+ARG SOURCE_REPO="quay.io/fedora-ostree-desktops"
+ARG SOURCE_IMAGE="silverblue"
 ARG SOURCE_TAG="latest"
 
 ### FETCH BASE-IMAGE
