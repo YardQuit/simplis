@@ -2,7 +2,7 @@
 # ARG SOURCE_REPO="ghcr.io/ublue-os"
 ARG SOURCE_REPO="quay.io/fedora-ostree-desktops"
 ARG SOURCE_IMAGE="silverblue"
-ARG SOURCE_TAG="latest"
+ARG SOURCE_TAG="42"
 
 ### FETCH BASE-IMAGE
 FROM ${SOURCE_REPO}/${SOURCE_IMAGE}:${SOURCE_TAG}
