@@ -59,21 +59,17 @@ mkdir -p /tmp/Volatile
     echo
     # Install local AI environment
     if ! [[ $(podman start ollama 2>/dev/null) ]]; then
-        read -p "Do you want to procees with local AI install? (y/N): " response
-        if [ "$response" = "y" ] || [ "$response" = Y ]; then
+        read -p "Do you want to procees with local AI ollama install? (y/N): " response
+        if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
             podman run -d -v ollama:/root/.ollama -p 11434:11434 --restart always --name ollama docker.io/ollama/ollama:latest
             podman exec -it ollama ollama pull llama3.2
             podman run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --restart always --name open-webui ghcr.io/open-webui/open-webui:latest
-        else
-            cd
-            cls
-            exit
         fi
     fi
 
     if ! [[ $(podman start open-webui 2>/dev/null) ]]; then
         read -p "Do you want to procees with local AI open-webui install? (y/N): " response
-        if [ "$response" = "y" ] || [ "$response" = Y ]; then
+        if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
             podman run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --restart always --name open-webui ghcr.io/open-webui/open-webui:latest
         fi
     fi

@@ -87,6 +87,7 @@ fi
   alias t3a="t3 -a"
   alias t3du="t3 --du -h"
   alias lldu="ls -l | awk '{ print \$10 }' | sed 's/\///' | xargs du -sh"
+  alias .="cd -"
   alias ..="cd ../"
   alias ...="cd ../../"
   alias ....="cd ../../../"
