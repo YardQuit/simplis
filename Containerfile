@@ -13,7 +13,6 @@ COPY packages /tmp/packages
 COPY build.sh /tmp/build.sh
 
 ### SETUP FILESYSTEM
-RUN ln -s -T /var/opt /opt
 RUN mkdir /var/roothome
 
 ### RUN BUILD-SCRIPT AND MAKE COMMIT 
