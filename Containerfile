@@ -13,7 +13,6 @@ COPY packages /tmp/packages
 COPY build.sh /tmp/build.sh
 
 ### SETUP FILESYSTEM
-RUN rmdir /opt
 RUN ln -s -T /var/opt /opt
 RUN mkdir /var/roothome
 
