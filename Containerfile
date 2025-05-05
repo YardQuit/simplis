@@ -12,6 +12,11 @@ COPY sysfiles /tmp/sysfiles
 COPY packages /tmp/packages
 COPY build.sh /tmp/build.sh
 
+### SETUP FILESYSTEM
+RUN rmdir /opt
+RUN ln -s -T /var/opt /opt
+RUN mkdir /var/roothome
+
 ### RUN BUILD-SCRIPT AND MAKE COMMIT 
 RUN /tmp/build.sh && \
     dnf clean all && \
