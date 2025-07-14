@@ -7,19 +7,14 @@ cronie-anacron
 dislocker
 fastfetch
 fd-find
-ffmpeg
 fzf
 git
 git-lfs
 gnome-boxes
-gstreamer1-plugin-gtk4
-gstreamer1-plugin-openh264
-gstreamer1-plugins-good-gtk
 helix
 inxi
 lm_sensors
 macchanger
-mozilla-openh264
 mupdf
 rpi-imager
 sqlite
@@ -29,5 +24,4 @@ stow-doc
 tailscale
 tldr
 translate-shell
-wget
 zoxide
