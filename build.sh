@@ -50,4 +50,5 @@ rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
 rm -rf /etc/yum.repos.d/atim-starship-fedora-41.repo
 rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pgdev:ghostty.repo
+rm -rf /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:pennbauman:ports.repo
 rm -rf /etc/yum.repos.d/_copr_ryanabx-cosmic.repo
