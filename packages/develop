@@ -29,15 +29,6 @@ neovim
 osbuild
 osbuild-selinux
 packit
-poetry
-pykickstart
-python-pip
-python3-devel
-python3-lsp-black
-python3-lsp-server+all
-python3-mypy
-python3-pytest
-python3-pytest-lsp
 rpm-build
 rpm-devel
 rpm-spec-language-server
@@ -52,7 +43,6 @@ rust2rpm
 texlive
 texlive-latex
 valgrind
-xelatex
 xorriso
 zig
 zig-doc
