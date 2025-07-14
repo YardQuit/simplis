@@ -13,6 +13,7 @@ dnf5 -y install \
 $(cat /tmp/packages/desktop) \
 $(cat /tmp/packages/fonts) \
 $(cat /tmp/packages/generic) \
+$(cat /tmp/packages/develop) \
 $(cat /tmp/packages/security)
 
 ### INSTALLS PACKAGE(S) FROM COPR REPOS
