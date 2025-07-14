@@ -19,6 +19,7 @@ $(cat /tmp/packages/security)
 ### INSTALLS PACKAGE(S) FROM COPR REPOS
 dnf5 -y install ghostty
 dnf5 -y install starship
+dnf5 -y install lf
 
 ### DISABLING SYSTEM UNIT FILE(S)
 systemctl disable cosmic-greeter.service
