@@ -8,8 +8,6 @@ dislocker
 fastfetch
 fd-find
 fzf
-git
-git-lfs
 gnome-boxes
 helix
 inxi
@@ -19,8 +17,6 @@ mupdf
 rpi-imager
 sqlite
 sshfs
-stow
-stow-doc
 tailscale
 tldr
 translate-shell
