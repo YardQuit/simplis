@@ -9,7 +9,7 @@ cp -rv /tmp/sysfiles/* /
 chmod +x /etc/cron.daily/*
 
 ### INSTALLS PACKAGE(S) FROM FEDORA REPOS
-dnf5 --skip-unavailable -y install \
+dnf5 install --skip-unavailable -y \
 $(cat /tmp/packages/desktop) \
 $(cat /tmp/packages/fonts) \
 $(cat /tmp/packages/generic) \
