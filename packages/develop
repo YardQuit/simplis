@@ -57,8 +57,3 @@ valgrind
 xelatex
 xlmstarlet
 xorriso
-zig
-zig-doc
-zig-libs
-zig-rpm-macros
-zig-srpm-macros
